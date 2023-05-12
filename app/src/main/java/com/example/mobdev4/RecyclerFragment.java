@@ -74,24 +74,7 @@ public class RecyclerFragment extends Fragment {
         binding.recView.setLayoutManager(new LinearLayoutManager(getActivity()));
         UserAdapter adapter = new UserAdapter(getActivity(),mParam1);
         binding.recView.setAdapter(adapter);
-        binding.recView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
-            @Override
-            public boolean onInterceptTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                return false;
-            }
 
-            @Override
-            public void onTouchEvent(@NonNull RecyclerView rv, @NonNull MotionEvent e) {
-                Log.i("gg","item touched");
-                Toast toast = Toast.makeText(getContext(),"item touched",Toast.LENGTH_SHORT);
-                toast.show();
-            }
-
-            @Override
-            public void onRequestDisallowInterceptTouchEvent(boolean disallowIntercept) {
-
-            }
-        });
         return binding.getRoot();
     }
 
